@@ -24,11 +24,11 @@ if [ -n "$servers" ]; then
     if [ -f $deploy_directory/build*.zip ]; then
       echo "inside the if block"
       # copy the build to the other server
-      scp -i ~/.ssh/laravel_demo.pem $deploy_directory/build*.zip  ubuntu@${servers[$i]}:/home/ubuntu
+      scp -i ~/.ssh/laravel_task.pem $deploy_directory/build*.zip  ubuntu@${servers[$i]}:/home/ubuntu
       # move the zip file to the deployment user (assumes same username)
       # chown to set the owner of the zip to the deployment user
       # run the deployment script on the other node
-      ssh -i ~/.ssh/laravel_demo.pem ubuntu@"${servers[$1]}" <<ENDSSH
+      ssh -i ~/.ssh/laravel_task.pem ubuntu@"${servers[$1]}" <<ENDSSH
         sudo mv /home/ubuntu/build*.zip /home/$username/deployments
         sudo chown -R $username:$username /home/$username/deployments
         sudo -u $username /usr/local/bin/devops/deploy/deploy.sh

@@ -17,7 +17,7 @@ if [ ! -f archived_deployed.lock ]; then
   npm install
 
   status "Build Front End Assets"
-  npm run build
+  npm run dev
 else
   status "Build completed when creating archive"
 fi

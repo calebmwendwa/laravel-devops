@@ -10,7 +10,7 @@ source $my_path/../common/helpers.sh
 title "Create New Application Form"
 
 # Get user name
-read -p "Enter the deployment username (e.g., demo_1):" username
+read -p "Enter the deployment username (e.g., task_1):" username
 
 # Check if the user exists
 while [ -z "$username" ] || [ $(getent passwd "$username") ]; do

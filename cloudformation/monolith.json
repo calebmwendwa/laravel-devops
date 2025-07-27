@@ -9,7 +9,7 @@
         "InstanceTenancy": "default",
         "Tags": [
           {
-            "Value": "laravel_demo_vpc",
+            "Value": "laravel_task_vpc",
             "Key": "Name"
           }
         ]
@@ -20,7 +20,7 @@
       "Properties": {
         "Tags": [
           {
-            "Value": "laravel_demo_igw",
+            "Value": "laravel_task_igw",
             "Key": "Name"
           }
         ]
@@ -48,7 +48,7 @@
         "MapPublicIpOnLaunch": true,
         "Tags": [
           {
-            "Value": "laravel_demo_public_subnet_1",
+            "Value": "laravel_task_public_subnet_1",
             "Key": "Name"
           }
         ]
@@ -65,7 +65,7 @@
         "MapPublicIpOnLaunch": false,
         "Tags": [
           {
-            "Value": "laravel_demo_private_subnet_1",
+            "Value": "laravel_task_private_subnet_1",
             "Key": "Name"
           }
         ]
@@ -82,7 +82,7 @@
         "MapPublicIpOnLaunch": true,
         "Tags": [
           {
-            "Value": "laravel_demo_public_subnet_2",
+            "Value": "laravel_task_public_subnet_2",
             "Key": "Name"
           }
         ]
@@ -99,7 +99,7 @@
         "MapPublicIpOnLaunch": false,
         "Tags": [
           {
-            "Value": "laravel_demo_private_subnet_2",
+            "Value": "laravel_task_private_subnet_2",
             "Key": "Name"
           }
         ]
@@ -113,7 +113,7 @@
         },
         "Tags": [
           {
-            "Value": "laravel_demo_rtb_public",
+            "Value": "laravel_task_rtb_public",
             "Key": "Name"
           }
         ]
@@ -230,7 +230,7 @@
         ],
         "Tags": [
           {
-            "Value": "laravel_demo_sg",
+            "Value": "laravel_task_sg",
             "Key": "Name"
           }
         ]
@@ -241,7 +241,7 @@
       "Properties": {
         "ImageId": "ami-080e1f13689e07408",
         "InstanceType": "t2.micro",
-        "KeyName": "laravel_demo",
+        "KeyName": "laravel_task",
         "SubnetId": {
           "Ref": "PublicSubnet1"
         },
@@ -252,7 +252,7 @@
         ],
         "Tags": [
           {
-            "Value": "laravel_demo_ec2_instance",
+            "Value": "laravel_task_ec2_instance",
             "Key": "Name"
           }
         ],
@@ -262,7 +262,7 @@
               "",
               [
                 "#!/bin/bash -ex\n",
-                "git clone https://github.com/rcravens/devops-laravel.git /usr/local/bin/devops\n",
+                "git clone https://github.com/calebmwendwa/laravel-devops.git /usr/local/bin/devops\n",
                 "/usr/local/bin/devops/common/create_aliases.sh\n",
                 "source ~/.bashrc\n",
               ]

@@ -28,9 +28,9 @@ Here is a "how to" video for the provisioning (released: April 23):
 If the following commands are not available, run the `./common/create_aliases.sh` script to create the aliases in your bash profile. You may need to "re-source" to make those work.
 
 As the root user should have the following commands available to you:
-* `appList` - Lists out the installed applications. You can have multiple applications installed on a single server (e.g., demo_1, demo_2...)
+* `appList` - Lists out the installed applications. You can have multiple applications installed on a single server (e.g., task_1, task_2...)
 * `appNew` - This command collects the necessary information to create a new application. You will need to provide the following:
-  * Deployment Username - Each application has its own deployment user. This will also become the application name and the MySQL database name. (e.g., demo_1)
+  * Deployment Username - Each application has its own deployment user. This will also become the application name and the MySQL database name. (e.g., task_1)
   * Deployment User Password - Password for the deployment user's account
   * Deployment User MySQL Password - Each deployment user can only access the database associated with their application.
   * Application Port Number - Nginx will serve up multiple applications on a single server, but each will need a distinct port number.

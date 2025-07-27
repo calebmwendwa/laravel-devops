@@ -18,7 +18,7 @@
         "HostedZoneId": {
           "Ref": "HostedZone"
         },
-        "Name": "laraveldemo.nexlr.com",
+        "Name": "laraveltask.nexlr.com",
         "Type": "CNAME",
         "TTL": 300,
         "ResourceRecords": [

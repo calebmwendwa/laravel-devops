@@ -264,7 +264,7 @@
                 "#!/bin/bash -ex\n",
                 "git clone https://github.com/calebmwendwa/laravel-devops.git /usr/local/bin/devops\n",
                 "/usr/local/bin/devops/common/create_aliases.sh\n",
-                "source ~/.bashrc\n",
+                "source ~/.bashrc\n"
               ]
             ]
           }

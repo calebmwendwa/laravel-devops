@@ -252,7 +252,7 @@
         ],
         "Tags": [
           {
-            "Value": "laravel_task_ec2_instance",
+            "Value": "laravel_tasks_ec2_instance",
             "Key": "Name"
           }
         ],

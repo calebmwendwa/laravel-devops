@@ -11,48 +11,48 @@ sudo apt-get update -y
 sudo apt-get install -y --allow-change-held-packages \
 php-imagick php-memcached php-redis php-xdebug php-dev imagemagick mcrypt
 
-# PHP 5.6
+# PHP 8.2
 sudo apt-get install -y --allow-change-held-packages \
-php5.6-bcmath php5.6-bz2 php5.6-cgi php5.6-cli php5.6-common php5.6-curl php5.6-dba php5.6-dev php5.6-enchant \
-php5.6-fpm php5.6-gd php5.6-gmp php5.6-imap php5.6-interbase php5.6-intl php5.6-json php5.6-ldap php5.6-mbstring \
-php5.6-mcrypt php5.6-mysql php5.6-odbc php5.6-opcache php5.6-pgsql php5.6-phpdbg php5.6-pspell php5.6-readline \
-php5.6-recode php5.6-snmp php5.6-soap php5.6-sqlite3 php5.6-sybase php5.6-tidy php5.6-xml php5.6-xmlrpc php5.6-xsl \
-php5.6-zip php5.6-imagick php5.6-memcached php5.6-redis
+php8.2-bcmath php8.2-bz2 php8.2-cgi php8.2-cli php8.2-common php8.2-curl php8.2-dba php8.2-dev php8.2-enchant \
+php8.2-fpm php8.2-gd php8.2-gmp php8.2-imap php8.2-interbase php8.2-intl php8.2-json php8.2-ldap php8.2-mbstring \
+php8.2-mcrypt php8.2-mysql php8.2-odbc php8.2-opcache php8.2-pgsql php8.2-phpdbg php8.2-pspell php8.2-readline \
+php8.2-recode php8.2-snmp php8.2-soap php8.2-sqlite3 php8.2-sybase php8.2-tidy php8.2-xml php8.2-xmlrpc php8.2-xsl \
+php8.2-zip php8.2-imagick php8.2-memcached php8.2-redis
 
 # Configure php.ini for CLI
-sudo sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/5.6/cli/php.ini
-sudo sed -i "s/display_errors = .*/display_errors = On/" /etc/php/5.6/cli/php.ini
-sudo sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php/5.6/cli/php.ini
-sudo sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php/5.6/cli/php.ini
+sudo sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/8.2/cli/php.ini
+sudo sed -i "s/display_errors = .*/display_errors = On/" /etc/php/8.2/cli/php.ini
+sudo sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php/8.2/cli/php.ini
+sudo sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php/8.2/cli/php.ini
 
 # Configure Xdebug
-sudo bash -c 'echo "xdebug.remote_enable = 1" >> /etc/php/5.6/mods-available/xdebug.ini'
-sudo bash -c 'echo "xdebug.remote_connect_back = 1" >> /etc/php/5.6/mods-available/xdebug.ini'
-sudo bash -c 'echo "xdebug.remote_port = 9000" >> /etc/php/5.6/mods-available/xdebug.ini'
-sudo bash -c 'echo "xdebug.max_nesting_level = 512" >> /etc/php/5.6/mods-available/xdebug.ini'
-sudo bash -c 'echo "opcache.revalidate_freq = 0" >> /etc/php/5.6/mods-available/opcache.ini'
+sudo bash -c 'echo "xdebug.remote_enable = 1" >> /etc/php/8.2/mods-available/xdebug.ini'
+sudo bash -c 'echo "xdebug.remote_connect_back = 1" >> /etc/php/8.2/mods-available/xdebug.ini'
+sudo bash -c 'echo "xdebug.remote_port = 9000" >> /etc/php/8.2/mods-available/xdebug.ini'
+sudo bash -c 'echo "xdebug.max_nesting_level = 512" >> /etc/php/8.2/mods-available/xdebug.ini'
+sudo bash -c 'echo "opcache.revalidate_freq = 0" >> /etc/php/8.2/mods-available/opcache.ini'
 
 # Configure php.ini for FPM
-sudo sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/5.6/fpm/php.ini
-sudo sed -i "s/display_errors = .*/display_errors = On/" /etc/php/5.6/fpm/php.ini
-sudo sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/5.6/fpm/php.ini
-sudo sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php/5.6/fpm/php.ini
-sudo sed -i "s/upload_max_filesize = .*/upload_max_filesize = 100M/" /etc/php/5.6/fpm/php.ini
-sudo sed -i "s/post_max_size = .*/post_max_size = 100M/" /etc/php/5.6/fpm/php.ini
-sudo sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php/5.6/fpm/php.ini
+sudo sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/8.2/fpm/php.ini
+sudo sed -i "s/display_errors = .*/display_errors = On/" /etc/php/8.2/fpm/php.ini
+sudo sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/8.2/fpm/php.ini
+sudo sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php/8.2/fpm/php.ini
+sudo sed -i "s/upload_max_filesize = .*/upload_max_filesize = 100M/" /etc/php/8.2/fpm/php.ini
+sudo sed -i "s/post_max_size = .*/post_max_size = 100M/" /etc/php/8.2/fpm/php.ini
+sudo sed -i "s/;date.timezone.*/date.timezone = UTC/" /etc/php/8.2/fpm/php.ini
 
-sudo printf "[openssl]\n" | sudo tee -a /etc/php/5.6/fpm/php.ini
-sudo printf "openssl.cainfo = /etc/ssl/certs/ca-certificates.crt\n" | sudo tee -a /etc/php/5.6/fpm/php.ini
+sudo printf "[openssl]\n" | sudo tee -a /etc/php/8.2/fpm/php.ini
+sudo printf "openssl.cainfo = /etc/ssl/certs/ca-certificates.crt\n" | sudo tee -a /etc/php/8.2/fpm/php.ini
 
-sudo printf "[curl]\n" | sudo tee -a /etc/php/5.6/fpm/php.ini
-sudo printf "curl.cainfo = /etc/ssl/certs/ca-certificates.crt\n" | sudo tee -a /etc/php/5.6/fpm/php.ini
+sudo printf "[curl]\n" | sudo tee -a /etc/php/8.2/fpm/php.ini
+sudo printf "curl.cainfo = /etc/ssl/certs/ca-certificates.crt\n" | sudo tee -a /etc/php/8.2/fpm/php.ini
 
 # Configure FPM
-sudo sed -i "s/user =.*/user = $username/" /etc/php/5.6/fpm/pool.d/www.conf
-sudo sed -i "s/group =.*/group = $username/" /etc/php/5.6/fpm/pool.d/www.conf
-sudo sed -i "s/listen\.owner.*/listen.owner = $username/" /etc/php/5.6/fpm/pool.d/www.conf
-sudo sed -i "s/listen\.group.*/listen.group = $username/" /etc/php/5.6/fpm/pool.d/www.conf
-sudo sed -i "s/;listen\.mode.*/listen.mode = 0666/" /etc/php/5.6/fpm/pool.d/www.conf
+sudo sed -i "s/user =.*/user = $username/" /etc/php/8.2/fpm/pool.d/www.conf
+sudo sed -i "s/group =.*/group = $username/" /etc/php/8.2/fpm/pool.d/www.conf
+sudo sed -i "s/listen\.owner.*/listen.owner = $username/" /etc/php/8.2/fpm/pool.d/www.conf
+sudo sed -i "s/listen\.group.*/listen.group = $username/" /etc/php/8.2/fpm/pool.d/www.conf
+sudo sed -i "s/;listen\.mode.*/listen.mode = 0666/" /etc/php/8.2/fpm/pool.d/www.conf
 
 # PHP 7.0
 sudo apt-get install -y --allow-change-held-packages \
